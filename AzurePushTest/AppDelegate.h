@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WindowsAzureMessaging/WindowsAzureMessaging.h>
+#import "HubInfo.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
