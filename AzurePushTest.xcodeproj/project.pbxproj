@@ -14,6 +14,7 @@
 		D86655B71FDD22D200A8A01E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86655B51FDD22D200A8A01E /* LaunchScreen.storyboard */; };
 		D86655BA1FDD22D200A8A01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D86655B91FDD22D200A8A01E /* main.m */; };
 		D86655C31FDD2BC400A8A01E /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86655C21FDD2BC400A8A01E /* WindowsAzureMessaging.framework */; };
+		D878DB661FDD4C3900D8ECA5 /* RegisterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D878DB651FDD4C3900D8ECA5 /* RegisterClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D86655C21FDD2BC400A8A01E /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		D86655C41FDD2C0700A8A01E /* HubInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubInfo.h; sourceTree = "<group>"; };
 		D86655C51FDD36D300A8A01E /* AzurePushTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AzurePushTest.entitlements; sourceTree = "<group>"; };
+		D878DB641FDD4C3900D8ECA5 /* RegisterClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterClient.h; sourceTree = "<group>"; };
+		D878DB651FDD4C3900D8ECA5 /* RegisterClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				D86655B81FDD22D200A8A01E /* Info.plist */,
 				D86655B91FDD22D200A8A01E /* main.m */,
 				D86655C41FDD2C0700A8A01E /* HubInfo.h */,
+				D878DB641FDD4C3900D8ECA5 /* RegisterClient.h */,
+				D878DB651FDD4C3900D8ECA5 /* RegisterClient.m */,
 			);
 			path = AzurePushTest;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				D86655AF1FDD22D200A8A01E /* ViewController.m in Sources */,
 				D86655BA1FDD22D200A8A01E /* main.m in Sources */,
 				D86655AC1FDD22D200A8A01E /* AppDelegate.m in Sources */,
+				D878DB661FDD4C3900D8ECA5 /* RegisterClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +325,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X6R3GG332F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -329,8 +335,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dvok.AzurePushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c1597662-b416-4992-b8af-14d6cf319c79";
+				PROVISIONING_PROFILE_SPECIFIER = "Azure Push Test";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
