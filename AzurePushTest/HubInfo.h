@@ -11,5 +11,5 @@
 
     #define HUBNAME @"mindboxpushnotificationhub-test-ios"
     #define HUBLISTENACCESS @"Endpoint=sb://mindboxpushnotificationhub-test-ios.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=GCLqjU7EvV5hWEJZCKnVBp7HRh6dxyc6uI2/bR7u//E="
-
+    #define API_VERSION @"?api-version=2015-01"
 #endif /* HubInfo_h */

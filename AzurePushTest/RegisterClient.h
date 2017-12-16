@@ -10,11 +10,13 @@
 
 @interface RegisterClient : NSObject
 
-@property (strong, nonatomic) NSString* authenticationHeader;
-
--(void) registerWithDeviceToken:(NSData*)token tags:(NSSet*)tags
+-(void) registerWithDeviceToken:(NSData*)token
+                  installationId:(NSString*) installationId
+                           tags:(NSSet*)tags
                   andCompletion:(void(^)(NSError*))completion;
 
--(instancetype) initWithEndpoint:(NSString*)Endpoint;
+-(instancetype) init;
+
+-(NSString*) retrieveOrGenerateInstallationId;
 
 @end

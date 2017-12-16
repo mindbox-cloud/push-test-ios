@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) NSString* InstallationId;
+
+@property (weak, nonatomic) IBOutlet UITextField *InstallationIdField;
 
 @end
 

@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "RegisterClient.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) NSString* installationId;
 @property (strong, nonatomic) NSData* deviceToken;
 @property (strong, nonatomic) RegisterClient* registerClient;
 
@@ -25,7 +27,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _registerClient = [[RegisterClient alloc] init];
+    
+    
+    _installationId = [self.registerClient retrieveOrGenerateInstallationId];
+    NSLog(@"Installation Id: %@", _installationId);
+    
+    ViewController* viewController = (ViewController*) self.window.rootViewController;
+    viewController.InstallationId = _installationId;
     
     UIUserNotificationSettings *settings = [UIUserNotificationSettings
                                             settingsForTypes:UIUserNotificationTypeSound |
@@ -39,19 +49,22 @@
 }
 
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
-    
-    [self.registerClient registerWithDeviceToken:deviceToken tags:nil andCompletion:^(NSError* error) {
-        if (error != nil) {
-            NSLog(@"Error registering for notifications: %@", error);
-        }
-        else {
-            NSLog(@"%@", deviceToken);
-            [self MessageBox:@"Registration Status" message:@"Registered"];
-        }
-    }];
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
+{
+    [_registerClient registerWithDeviceToken:deviceToken
+                              installationId: _installationId
+                                        tags:nil
+                               andCompletion:^(NSError* error) {
+                                   if (error != nil) {
+                                       NSLog(@"Error registering for notifications: %@", error);
+                                   }
+                                   else {
+                                       NSLog(@"%@", deviceToken);
+                                       [self MessageBox:@"Registration Status" message:@"Registered"];
+                                   }
+                               }];
 }
-     
+
 
 
 -(void)MessageBox:(NSString *)title message:(NSString *)messageText
@@ -65,17 +78,5 @@
     NSLog(@"%@", userInfo);
     [self MessageBox:@"Notification" message:[[userInfo objectForKey:@"aps"] valueForKey:@"alert"]];
 }
-
--(void) createAndSetAuthenticationHeaderWithUsername:(NSString*)username
-                                         AndPassword:(NSString*)password;
-{
-    NSString* headerValue = [NSString stringWithFormat:@"%@:%@", username, password];
-    
-    NSData* encodedData = [[headerValue dataUsingEncoding:NSUTF8StringEncoding] base64EncodedDataWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
-    
-    self.registerClient.authenticationHeader = [[NSString alloc] initWithData:encodedData
-                                                                     encoding:NSUTF8StringEncoding];
-}
-
 
 @end
