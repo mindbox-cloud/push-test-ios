@@ -13,9 +13,34 @@
 		D86655B41FDD22D200A8A01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86655B31FDD22D200A8A01E /* Assets.xcassets */; };
 		D86655B71FDD22D200A8A01E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86655B51FDD22D200A8A01E /* LaunchScreen.storyboard */; };
 		D86655BA1FDD22D200A8A01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D86655B91FDD22D200A8A01E /* main.m */; };
-		D86655C31FDD2BC400A8A01E /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86655C21FDD2BC400A8A01E /* WindowsAzureMessaging.framework */; };
+		D875D4BB1FEE6D27003E680B /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D875D4BA1FEE6D27003E680B /* NotificationService.m */; };
+		D875D4BF1FEE6D27003E680B /* NotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D875D4B71FEE6D27003E680B /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D878DB661FDD4C3900D8ECA5 /* RegisterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D878DB651FDD4C3900D8ECA5 /* RegisterClient.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D875D4BD1FEE6D27003E680B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D866559F1FDD22D200A8A01E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D875D4B61FEE6D27003E680B;
+			remoteInfo = NotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D875D4C31FEE6D27003E680B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D875D4BF1FEE6D27003E680B /* NotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D86655A71FDD22D200A8A01E /* AzurePushTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzurePushTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,9 +53,14 @@
 		D86655B61FDD22D200A8A01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86655B81FDD22D200A8A01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86655B91FDD22D200A8A01E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D86655C21FDD2BC400A8A01E /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		D86655C41FDD2C0700A8A01E /* HubInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubInfo.h; sourceTree = "<group>"; };
 		D86655C51FDD36D300A8A01E /* AzurePushTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AzurePushTest.entitlements; sourceTree = "<group>"; };
+		D875D4B71FEE6D27003E680B /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D875D4B91FEE6D27003E680B /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		D875D4BA1FEE6D27003E680B /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		D875D4BC1FEE6D27003E680B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D875D4CA1FEE9947003E680B /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		D875D4CC1FEE9947003E680B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		D878DB641FDD4C3900D8ECA5 /* RegisterClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterClient.h; sourceTree = "<group>"; };
 		D878DB651FDD4C3900D8ECA5 /* RegisterClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,7 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86655C31FDD2BC400A8A01E /* WindowsAzureMessaging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D875D4B41FEE6D27003E680B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +86,9 @@
 		D866559E1FDD22D200A8A01E = {
 			isa = PBXGroup;
 			children = (
-				D86655C21FDD2BC400A8A01E /* WindowsAzureMessaging.framework */,
 				D86655A91FDD22D200A8A01E /* AzurePushTest */,
+				D875D4B81FEE6D27003E680B /* NotificationServiceExtension */,
+				D875D4C91FEE9947003E680B /* Frameworks */,
 				D86655A81FDD22D200A8A01E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D86655A71FDD22D200A8A01E /* AzurePushTest.app */,
+				D875D4B71FEE6D27003E680B /* NotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +122,25 @@
 			path = AzurePushTest;
 			sourceTree = "<group>";
 		};
+		D875D4B81FEE6D27003E680B /* NotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D875D4B91FEE6D27003E680B /* NotificationService.h */,
+				D875D4BA1FEE6D27003E680B /* NotificationService.m */,
+				D875D4BC1FEE6D27003E680B /* Info.plist */,
+			);
+			path = NotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		D875D4C91FEE9947003E680B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D875D4CA1FEE9947003E680B /* UserNotifications.framework */,
+				D875D4CC1FEE9947003E680B /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,15 +151,34 @@
 				D86655A31FDD22D200A8A01E /* Sources */,
 				D86655A41FDD22D200A8A01E /* Frameworks */,
 				D86655A51FDD22D200A8A01E /* Resources */,
+				D875D4C31FEE6D27003E680B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D875D4BE1FEE6D27003E680B /* PBXTargetDependency */,
 			);
 			name = AzurePushTest;
 			productName = AzurePushTest;
 			productReference = D86655A71FDD22D200A8A01E /* AzurePushTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D875D4B61FEE6D27003E680B /* NotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D875D4C21FEE6D27003E680B /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
+			buildPhases = (
+				D875D4B31FEE6D27003E680B /* Sources */,
+				D875D4B41FEE6D27003E680B /* Frameworks */,
+				D875D4B51FEE6D27003E680B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationServiceExtension;
+			productName = NotificationServiceExtension;
+			productReference = D875D4B71FEE6D27003E680B /* NotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -115,12 +191,16 @@
 				TargetAttributes = {
 					D86655A61FDD22D200A8A01E = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
 							};
 						};
+					};
+					D875D4B61FEE6D27003E680B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -138,6 +218,7 @@
 			projectRoot = "";
 			targets = (
 				D86655A61FDD22D200A8A01E /* AzurePushTest */,
+				D875D4B61FEE6D27003E680B /* NotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -150,6 +231,13 @@
 				D86655B71FDD22D200A8A01E /* LaunchScreen.storyboard in Resources */,
 				D86655B41FDD22D200A8A01E /* Assets.xcassets in Resources */,
 				D86655B21FDD22D200A8A01E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D875D4B51FEE6D27003E680B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +255,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D875D4B31FEE6D27003E680B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D875D4BB1FEE6D27003E680B /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D875D4BE1FEE6D27003E680B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D875D4B61FEE6D27003E680B /* NotificationServiceExtension */;
+			targetProxy = D875D4BD1FEE6D27003E680B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D86655B01FDD22D200A8A01E /* Main.storyboard */ = {
@@ -298,9 +402,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AzurePushTest/AzurePushTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6R3GG332F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -308,11 +412,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AzurePushTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dvok.AzurePushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c1597662-b416-4992-b8af-14d6cf319c79";
-				PROVISIONING_PROFILE_SPECIFIER = "Azure Push Test";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -322,9 +427,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AzurePushTest/AzurePushTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dmitry Kozhevnikov (U8K7BWA59S)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6R3GG332F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -332,11 +437,48 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AzurePushTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dvok.AzurePushTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c1597662-b416-4992-b8af-14d6cf319c79";
-				PROVISIONING_PROFILE_SPECIFIER = "Azure Push Test";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D875D4C01FEE6D27003E680B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6R3GG332F;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dvok.AzurePushTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D875D4C11FEE6D27003E680B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6R3GG332F;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dvok.AzurePushTest.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -358,6 +500,15 @@
 			buildConfigurations = (
 				D86655BE1FDD22D200A8A01E /* Debug */,
 				D86655BF1FDD22D200A8A01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D875D4C21FEE6D27003E680B /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D875D4C01FEE6D27003E680B /* Debug */,
+				D875D4C11FEE6D27003E680B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

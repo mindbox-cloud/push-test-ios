@@ -37,17 +37,16 @@
     ViewController* viewController = (ViewController*) self.window.rootViewController;
     viewController.InstallationId = _installationId;
     
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings
-                                            settingsForTypes:UIUserNotificationTypeSound |
-                                            UIUserNotificationTypeAlert |
-                                            UIUserNotificationTypeBadge categories:nil];
-    
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              NSLog(@"Notification permission granted: %@", granted ? @"TRUE" : @"FALSE");
+                          }];
+ 
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     return YES;
 }
-
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
 {
